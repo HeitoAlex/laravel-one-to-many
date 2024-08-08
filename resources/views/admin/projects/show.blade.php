@@ -10,6 +10,11 @@
             <h1>
                 {{ $project->title }}
             </h1>
+            @if ($project->type)
+                <h4 class="d-inline-block p-2 rounded" style="background: {{ $project->type->color }}">
+                    {{ $project->type->name }}
+                </h4>
+            @endif
             <h2>
                 {{ $project->author }}
             </h2>

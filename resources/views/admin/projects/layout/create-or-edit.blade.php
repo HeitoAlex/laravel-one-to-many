@@ -36,6 +36,18 @@
                     @enderror
                 </div>
                 <div class="mb-3">
+                    <select class="form-select" name="type_id">
+                        @foreach ( $types as $type )
+                            <option value="{{ $type->id }}" {{ $type->id == old('type_id', $project->type_id) ? 'selected' : ''}}> {{ $type->name }} </option>
+                        @endforeach
+                    </select>
+                    @error("type_id")
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="mb-3">
                     <label for="url">Project link:</label>
                     <input type="url" name="url" id="url" class="form-control mb-2" value="{{ old('url', $project->link) }}">
                     @error("url")

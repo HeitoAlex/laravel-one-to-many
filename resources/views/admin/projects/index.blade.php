@@ -11,6 +11,9 @@
                             #
                         </th>
                         <th scope="col">
+                            Type
+                        </th>
+                        <th scope="col">
                             Title
                         </th>
                         <th scope="col">
@@ -29,6 +32,9 @@
                         <tr>
                             <td>
                                 {{ $project->id }}
+                            </td>
+                            <td>
+                                {{ $project->type->name }}
                             </td>
                             <td>
                                 {{ $project->title }}
